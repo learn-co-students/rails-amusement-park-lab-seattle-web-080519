@@ -1,4 +1,21 @@
 
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /Users/gregorymorgan/Desktop/Code/My_Code/rails-amusement-park-lab-seattle-web-080519/spec/rails_helper.rb:32)
+
+
+
   9) Feature Test: Go on a Ride when the user doesn't have enough tickets, clicking on 'Go on ride' displays a sorry message
      Failure/Error: expect(page).to have_content("You do not have enough tickets the #{@ferriswheel.name}")
        expected to find text "You do not have enough tickets the Ferris Wheel" in "Toggle navigation Home Amy Poehler's profile LogOut Sorry. You do not have enough tickets to ride the Ferris Wheel. Show a User Name: Amy Poehler Height: 58 Tickets: 1 Happiness: 3 Mood: happy Nausea: 2 ADMIN: false See attractions Log Out"
