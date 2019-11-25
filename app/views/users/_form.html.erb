@@ -1,0 +1,41 @@
+<%= render 'layouts/errors', locals: {user: @user} %>
+
+<%= form_for(@user) do |f| %>
+  <div class="field<%= ' field_with_errors' if @user.errors[:name].any? %>">
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+  </div>
+
+  <div class="field<%= ' field_with_errors' if @user.errors[:password].any? %>">
+    <%= f.label :password %>
+    <%= f.text_field :password %><br>
+  </div>
+
+  <div class="field<%= ' field_with_errors' if @user.errors[:nausea].any? %>">
+    <%= f.label :nausea %>
+    <%= f.number_field :nausea %><br>
+  </div>
+
+  <div class="field<%= ' field_with_errors' if @user.errors[:happiness].any? %>">
+    <%= f.label :happiness %>
+    <%= f.number_field :happiness %><br>
+  </div>  
+
+  <div class="field<%= ' field_with_errors' if @user.errors[:tickets].any? %>">
+    <%= f.label :tickets %>
+    <%= f.number_field :tickets %><br>
+  </div>
+
+  <div class="field<%= ' field_with_errors' if @user.errors[:height].any? %>">
+    <%= f.label :height %>
+    <%= f.number_field :height %><br>
+  </div>
+
+  <div class="field<%= ' field_with_errors' if @user.errors[:admin].any? %>">
+    <%= f.label :admin %>
+    <%= f.check_box :admin %><br>
+  </div>
+
+  <%= f.submit "Create User" %>
+
+<% end %>

@@ -1,0 +1,18 @@
+<h1>View all Attractions</h1>
+<% if current_user.admin %>
+    <hr>
+    <%= render partial: "admin", locals: {attractions: @attractions} %>
+<% else %>
+    <ol>
+    <% @attractions.each do |attraction| %>
+      <li>
+          <%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></li>
+          <p>Minimun Height: <%= attraction.min_height %></p>
+          <p>Tickets: <%= attraction.tickets %></p>
+          <p>Nausea Rating: <%= attraction.nausea_rating %></p>
+          <p>Happiness Rating: <%= attraction.happiness_rating %></p>
+      </li>
+      <hr>
+    <% end %>
+    </ol>
+<% end %>

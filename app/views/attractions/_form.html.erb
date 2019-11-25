@@ -1,0 +1,28 @@
+<%= form_for (@attraction) do |f| %>
+  <div class="field<%= ' field_with_errors' if @attraction.errors[:name].any? %>">
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+  </div>
+
+  <div class="field<%= ' field_with_errors' if @attraction.errors[:min_height].any? %>">
+    <%= f.label :min_height %>
+    <%= f.text_field :min_height %><br>
+  </div>
+
+  <div class="field<%= ' field_with_errors' if @attraction.errors[:happiness_rating].any? %>">
+    <%= f.label :happiness_rating %>
+    <%= f.text_field :happiness_rating %><br>
+  </div>
+
+  <div class="field<%= ' field_with_errors' if @attraction.errors[:nausea_rating].any? %>">
+    <%= f.label :nausea_rating %>
+    <%= f.text_field :nausea_rating %><br>
+  </div>
+
+  <div class="field<%= ' field_with_errors' if @attraction.errors[:tickets].any? %>">
+    <%= f.label :tickets %>
+    <%= f.text_field :tickets %><br>
+  </div>
+
+  <%= f.submit %>
+<% end %> 

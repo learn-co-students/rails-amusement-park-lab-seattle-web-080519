@@ -50,3 +50,23 @@ body {
   height: 290px;
   text-align: left;
 }
+
+.error {
+    color:red
+}
+
+.success {
+    color:green
+}
+
+ol, ul {
+    list-style-type: none;
+}
+
+#error_explanation {
+    color:red
+}
+
+.field_with_errors {
+    color:red
+}
