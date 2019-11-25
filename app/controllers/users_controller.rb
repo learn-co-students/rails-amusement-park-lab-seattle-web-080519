@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:success] = "User created"
+      flash[:success] = "User created!"
       redirect_to user_path(@user)
     else
       flash[:error] = "Error. Not created"
@@ -27,27 +27,28 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-    find_user
-  end
+  # def edit
+  #   find_user
+  # end
 
-  def update
-    find_user
-    if @user.update(user_params)
-      flash[:success] = "User updated"
-      redirect_to user_path(@user.id)
-    else
-      flash[:error] = "User update failed."
-      puts @user.errors.full_messages
-      render :new
-    end
-  end
+  # def update
+  #   find_user
+  #   if @user.update(user_params)
+  #     flash[:success] = "User updated"
+  #     redirect_to user_path(@user.id)
+  #   else
+  #     flash[:error] = "User update failed."
+  #     puts @user.errors.full_messages
+  #     render :new
+  #   end
+  # end
 
-  def destroy
-    find_user
-    @user.destroy
-    redirect_to root_url
-  end
+  # def destroy
+  #   find_user
+  #   @user.destroy
+  #   flash[:success] = "User deleted"
+  #   redirect_to root_url
+  # end
 
   private
 

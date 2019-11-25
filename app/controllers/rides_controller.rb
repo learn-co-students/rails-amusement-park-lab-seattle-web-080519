@@ -11,7 +11,6 @@ class RidesController < ApplicationController
       puts @ride.errors.full_messages
       redirect_to attraction_path(@ride.attraction)
     end
-end
-
+  end
 
 end

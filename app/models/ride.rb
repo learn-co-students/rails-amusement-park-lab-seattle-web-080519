@@ -29,8 +29,9 @@ class Ride < ActiveRecord::Base
     new_happiness = self.user.happiness + self.attraction.happiness_rating
     new_nausea = self.user.nausea + self.attraction.nausea_rating
     new_tickets =  self.user.tickets - self.attraction.tickets
-    # self.user.update(:happiness => new_happiness,:tickets => new_nausea,:nausea => new_tickets)
-    self.user.update(happiness: new_happiness, tickets: new_tickets, nausea: new_nausea)
+    self.user.update(happiness: new_happiness, 
+      tickets: new_tickets, 
+      nausea: new_nausea)
   end
 
   def ticket_message
