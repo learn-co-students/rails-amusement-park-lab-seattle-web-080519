@@ -4,7 +4,7 @@
 
 Get comfortable with using form helpers, having models interact with each other, and building out a simple sessions system.
 
-You're going to be building an amusement park. There will be users, attractions, and users can take rides on attractions.
+You're going to be building an amusement park. There will be users and attractions, and users can take rides on attractions.
 
 ## Instructions
 * Check out [The Demo](http://amusement-park.herokuapp.com/) to see where this lab is headed.
